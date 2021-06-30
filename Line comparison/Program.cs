@@ -36,9 +36,20 @@ namespace Line_comparison
             //formula for calculate length
             lineOneLength = Math.Sqrt(Math.Pow(a2 - a1, 2) + Math.Pow(b2 - b1, 2));
             lineTwoLength = Math.Sqrt(Math.Pow(x2 - a1, 2) + Math.Pow(y2 - y1, 2));
-            //Checking line1 equals line 2 by Equals() and ternary operator 
-            String result = lineOneLength.Equals(lineTwoLength) ? "Line one is equal to line Two" : "Line one is not equal to line Two";
-            Console.WriteLine(result);
+
+            int result = lineOneLength.CompareTo(lineTwoLength);
+            if (result < 0)
+            {
+                Console.WriteLine("Line 1 is less than line 2");
+            }
+            else if (result == 0)
+            {
+                Console.WriteLine("Line 1 is equal to line 2");
+            }
+            else
+            {
+                Console.WriteLine("Line 1 is greater than line 2");
+            }
         }
     }
 }
